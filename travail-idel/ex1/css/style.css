@@ -1,0 +1,14 @@
+html,
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans" sans-serif;
+}
+
+.navigation {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
