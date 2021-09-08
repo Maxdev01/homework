@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block style %}
+  <style>
+    .div-connexion {
+        background: #A2DBFA;
+        height: 600px;
+    }
+
+    .sign-in {
+        display: block;
+        position: relative;
+        top: 20%;
+        left: 25%;
+        width: 500px;
+        border: 2px double black;
+        height: auto;
+    }
+    .sign-in input {
+        font-size: 20px;
+    }
+
+    .sign-in button {
+        background: #053742;
+        color: white;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="div-connexion">
+    <p>Pouw tounen nan paj akey lan <strong><a href="{% url 'first' %}">Akey</a></strong></p>
+    <div class="sign-in">
+        
+        
+        <h2>Ou sipoze konekte avan ou mete yon atik</h2>
+        <form action="{% url 'connexion' %}" method="POST">
+
+            {% csrf_token %}
+            {% if form.errors %}
+            <p>Gen youn nan chan yo ki pa bon</p>
+            {% endif %}
+            {{ form.as_p }}
+            <button type="submit">konekte</button>
+        </form>
+
+        <p>Siw poko gen yon kont al fe kounya <a href="{% url 'authentificate' %}"><strong>Enskripsyon</strong></a></p>
+    </div>
+
+
+</div>
+{% endblock %}

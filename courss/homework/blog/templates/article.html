@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+<style>
+    .center {
+        background: #A2DBFA;
+        height: auto;
+    }
+
+    .input {
+        display: block;
+        position: relative;
+        top: 15%;
+        left: 25%;
+        width: 500px;
+        border: 2px double black;
+        padding: 9px;
+        margin: 5px;
+    }
+    .input input , textarea {
+        border: 0;
+        background: none;
+        margin: 10px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        width: 350px;
+        outline: none;
+        color: #171717;
+        border-radius: 24px;
+        transition: 0.8s;
+    }
+
+    .input input {
+        height: 50px;
+    }
+
+    .input input:focus  {
+        width: 300px;
+        height: 50px;
+        border-color: #053742;
+    }
+
+    .input textarea:focus {
+        width: 320px;
+        height: 320px;
+    }
+
+    .input button {
+        background: #053742;
+        color: white;
+        font-size: 20px;
+        padding-left: 20px;
+        border-radius: 3%;
+    }
+
+
+
+</style>
+
+{% endblock %}
+{% block content %}
+
+
+    <div class="center">
+
+        {% if request.user.is_authenticated%}
+    <h1>Byenvini sou Blog mwen an :  {{ request.user.username }}</h1>
+    <h2><a href="{% url 'logout' %}">dekonekte</a></h2>
+    {% endif %}
+        <div class="input">
+            <form action="{% url 'detailpam' %}" method="POST" class="div-form">
+                {% csrf_token %}
+
+                {{form.tit.errors}}
+                {{form.jounalis.errors}}
+                {{form.kontni.errors}}
+
+                <hr>
+            
+               {{form.as_p}}
+                <button type="submit">Anrejistre</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

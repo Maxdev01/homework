@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+<style>
+
+    .div-index {
+        background: #74b1d1;
+        height: 300px;
+       
+    }
+   
+    .div-content {
+
+        background: #053742;
+        width: 400px;
+        height: 50px;
+        padding: 5px;
+        margin: 5px;
+        position: relative;
+        top: 20%;
+        left: 35%;
+
+    }
+    .div-content h3 a {
+        color: #68bae6;
+        text-decoration: none;
+    }
+</style>
+
+{% endblock  %}
+{% block content %}
+
+
+
+
+<div class="div-index">
+    <div class="div-content">
+        <h3><a href="{% url 'detailpam' %}">pouw al mete atik yo</a></h3>
+    </div>
+
+    <div class="div-content">
+        <h3><a href="{% url 'authentificate' %}">men kote pouw al enskri</a></h3>
+    </div>
+
+    <div class="div-content">
+        <h3><a href="{% url 'connexion' %}">al koneket siw gen yon kont </a></h3>
+    </div>
+</div>
+
+{% endblock %}

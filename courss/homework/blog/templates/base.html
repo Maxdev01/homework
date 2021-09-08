@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSO - {% block title%}{% endblock%}</title>
+
+    {% block style %} {% endblock %}
+
+    <style>
+        footer {
+            height: auto;
+            background: #171717;
+            text-align: center;
+            align-items: center;
+            color: aliceblue;
+        }
+
+        .div-nav {
+            text-align: center;
+            align-items: center;
+            background: #171717;
+        }
+        .div-nav h1 {
+            color: #EFEFEF;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="div-nav">
+        <h1>BYENVINI BLOG MAXDEV LAN</h1>
+
+    </div>
+
+    {% block content %} {% endblock %}
+    
+
+        <footer>
+            <p class="foot"> Created by Maxdev &copy; - 2021</p>
+            <br>
+            <p>Soonsor et remerciment : Code9 HAITI</p>
+        </footer>
+</body>
+</html>

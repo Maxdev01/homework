@@ -47,6 +47,22 @@ class Diksyone_pam:
         self.conn.commit()
         print(mesaj2)
 
+
+
+
+
+    # method sa se pouw modifye yon mo ak id li
+    def modif_word_id(self):
+        print("pati sa se pouw modifye yon mo avek id mo an ki donk fok ou konn id an")
+        up_word = input("antre modification an: ")
+        id_word = int(input("Kounya mete id mo an: "))
+        self.conn.execute("UPDATE resous set word = up_word where id = id_word ")
+        self.conn.commit
+        print("le nombre :", self.conn.total_changes)
+        print("chanjman an fet ak sikse")
+
+
+
     # method sa ap pemet ou we done ou sot mete yo 
     # ki donk fok mwen bien afiche yo
 
@@ -101,3 +117,9 @@ def sou_meni():
         klas.kreyasyon()
 
 fonk2 = sou_meni()
+
+
+"""
+mwen rete fonsyon pou li modifye mo an 
+
+"""
